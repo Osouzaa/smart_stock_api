@@ -24,6 +24,18 @@ model User {
   @@map("users")
 }
 
+model Products {
+  id             String    @id @default(uuid())
+  nome           String
+  categoria      String
+  codigo_barras  String
+  unidade        String
+  fornecedor     String
+  validade       DateTime?
+  estoque_minimo Int
+  created_At     DateTime  @default(now())
+}
+
 enum UserRole {
   ADMIN
   ESTOQUISTA
